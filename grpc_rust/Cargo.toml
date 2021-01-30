@@ -1,0 +1,36 @@
+[package]
+authors = ["Daniella Tola <au513437@uni.au.dk>"]
+edition = "2018"
+name = "grpc_tutorial"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]] # Bin to run the HelloWorld gRPC server
+name = "helloworld-server"
+path = "src/helloworld_server.rs"
+
+[[bin]] # Bin to run the HelloWorld gRPC client
+name = "helloworld-client"
+path = "src/helloworld_client.rs"
+
+[[bin]] # Bin to run the HelloWorld gRPC server
+name = "unifmu-server"
+path = "src/unifmu_server.rs"
+
+[[bin]] # Bin to run the HelloWorld gRPC client
+name = "unifmu-client"
+path = "src/unifmu_client.rs"
+
+[[bin]]
+name = "builder"
+path = "build.rs"
+
+[dependencies]
+prost = "0.7"
+tokio = {version = "*", features = ["rt-multi-thread", "time", "fs", "macros", "net"]}
+tonic = "0.4"
+tonic-build = "0.4"
+
+[build-dependencies]
+tonic-build = "0.4"

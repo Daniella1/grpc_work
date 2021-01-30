@@ -1,0 +1,129 @@
+syntax = "proto3";
+package unifmu_fmi2_proto;
+
+
+// JAVA
+option java_multiple_files = true;
+option java_package = "java_fmu.main.proto.unifmu_fmi2_proto";
+option java_outer_classname = "UniFMU_FMI2_Proto";
+
+// C#
+option csharp_namespace = "UniFMU_FMI2_Proto";
+
+// optimization
+option optimize_for = SPEED; // optimize the code to be fast, read https://developers.google.com/protocol-buffers/docs/proto#options 
+
+
+service SendCommand{
+    rpc Fmi2DoStep(DoStep) returns (StatusReturn) {}
+    rpc Fmi2SetReal(SetReal) returns (StatusReturn) {}
+    rpc Fmi2GetReal(GetXXX) returns (GetRealReturn) {}
+}
+
+
+message SetReal{
+    repeated uint32 references = 1; // array of uint32 --> in rust is array of c_uint
+    repeated double values = 2;
+}
+
+message SetInt{
+    repeated uint32 references = 1;
+    repeated int32 values = 2;
+}
+
+message SetBoolean{
+    repeated uint32 references = 1;
+    repeated bool values = 2;
+}
+
+message SetString{
+    repeated uint32 references = 1;
+    repeated string values = 2;
+}
+
+message GetXXX{
+    repeated uint32 references = 1;
+}
+
+message DoStep{
+    double current_time = 1;
+    double step_size = 2;
+    bool no_step_prior = 3;
+}
+
+
+message Fmi2Command{
+    oneof args {
+        // Field numbers between 1-15 only use one byte, therefore the functions that are called the most will be between 1-15
+        int32 DoStep = 1; // Co-sim
+        int32 SetReal = 2;
+        int32 SetInteger = 3;
+        int32 SetBoolean = 4;
+        int32 SetString = 5;
+        int32 GetReal = 6;
+        int32 GetInteger = 7;
+        int32 GetBoolean = 8;
+        int32 GetString = 9;
+        int32 SetDebugLogging = 10;
+        int32 SetupExperiment = 11;
+        int32 FreeInstance = 12;
+        int32 EnterInitializationMode = 13;
+        int32 ExitInitializationMode = 14;
+        int32 Terminate = 15;
+        int32 Reset = 16;
+        int32 Serialize = 17;
+        int32 Deserialize = 18;
+        // Co-sim
+        int32 GetDirectionalDerivatives = 19;
+        int32 SetInputDerivatives = 20;
+        int32 GetOutputDerivitives = 21;
+        int32 CancelStep = 22;
+        int32 GetXXXStatus = 23;
+    }
+}
+
+
+// return values
+// i.e. messages sent from fmu to wrapper
+
+// several FMI2 operations simply return a status
+// this is used as a common return type
+
+enum Fmi2Status
+{
+    Ok = 0;
+    Warning=1;
+    Discard=2;
+    Error=3;
+    Fatal=4;
+    Pending=5;
+}
+
+message StatusReturn{
+    Fmi2Status status = 1;
+}
+
+message GetRealReturn{
+    Fmi2Status status = 1;
+    repeated double values = 2;
+}
+
+
+message GetIntegerReturn{
+    Fmi2Status status = 1;
+    repeated int32 values = 2;
+}
+
+message GetBooleanReturn{
+    Fmi2Status status = 1;
+    repeated bool values = 2;
+}
+
+message GetStringReturn{
+    Fmi2Status status = 1;
+    repeated string values = 2;
+}
+
+message SerializeReturn{
+    bytes state = 1;
+}

@@ -1,0 +1,6 @@
+**/__
+**/bin
+**/obj
+**/target
+*/target
+*/__pycache__
