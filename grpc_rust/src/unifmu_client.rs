@@ -1,9 +1,8 @@
 use unifmu_fmi2_proto::send_command_client::SendCommandClient;
+use unifmu_fmi2_proto::GetXxx;
 use unifmu_fmi2_proto::SetReal;
-
 // use unifmu_fmi2_proto::DoStep;
 // use unifmu_fmi2_proto::GetRealReturn;
-// use unifmu_fmi2_proto::GetXxx;
 
 pub mod unifmu_fmi2_proto {
     tonic::include_proto!("unifmu_fmi2_proto");
@@ -19,6 +18,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client.fmi2_set_real(set_real).await?;
+
+    println!("RESPONSE={:?}", response);
+
+    let get_real = tonic::Request::new(GetXxx {
+        references: vec![0, 1, 2],
+    });
+
+    let response = client.fmi2_get_real(get_real).await?;
 
     println!("RESPONSE={:?}", response);
 

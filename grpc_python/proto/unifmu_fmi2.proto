@@ -99,6 +99,14 @@ enum Fmi2Status
     Pending=5;
 }
 
+enum Fmi2StatusKind
+{
+    DoStepStatus = 0;
+    PendingStatus = 1;
+    LastSuccessfulTime = 2;
+    Terminated = 3;
+}
+
 message StatusReturn{
     Fmi2Status status = 1;
 }
