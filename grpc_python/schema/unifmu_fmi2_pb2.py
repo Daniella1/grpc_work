@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%java_fmu.main.proto.unifmu_fmi2_protoB\021UniFMU_FMI2_ProtoH\001P\001\252\002\021UniFMU_FMI2_Proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11unifmu_fmi2.proto\x12\x11unifmu_fmi2_proto\"-\n\x07SetReal\x12\x12\n\nreferences\x18\x01 \x03(\r\x12\x0e\n\x06values\x18\x02 \x03(\x01\",\n\x06SetInt\x12\x12\n\nreferences\x18\x01 \x03(\r\x12\x0e\n\x06values\x18\x02 \x03(\x05\"0\n\nSetBoolean\x12\x12\n\nreferences\x18\x01 \x03(\r\x12\x0e\n\x06values\x18\x02 \x03(\x08\"/\n\tSetString\x12\x12\n\nreferences\x18\x01 \x03(\r\x12\x0e\n\x06values\x18\x02 \x03(\t\"\x1c\n\x06GetXXX\x12\x12\n\nreferences\x18\x01 \x03(\r\"H\n\x06\x44oStep\x12\x14\n\x0c\x63urrent_time\x18\x01 \x01(\x01\x12\x11\n\tstep_size\x18\x02 \x01(\x01\x12\x15\n\rno_step_prior\x18\x03 \x01(\x08\"\xc6\x04\n\x0b\x46mi2Command\x12\x10\n\x06\x44oStep\x18\x01 \x01(\x05H\x00\x12\x11\n\x07SetReal\x18\x02 \x01(\x05H\x00\x12\x14\n\nSetInteger\x18\x03 \x01(\x05H\x00\x12\x14\n\nSetBoolean\x18\x04 \x01(\x05H\x00\x12\x13\n\tSetString\x18\x05 \x01(\x05H\x00\x12\x11\n\x07GetReal\x18\x06 \x01(\x05H\x00\x12\x14\n\nGetInteger\x18\x07 \x01(\x05H\x00\x12\x14\n\nGetBoolean\x18\x08 \x01(\x05H\x00\x12\x13\n\tGetString\x18\t \x01(\x05H\x00\x12\x19\n\x0fSetDebugLogging\x18\n \x01(\x05H\x00\x12\x19\n\x0fSetupExperiment\x18\x0b \x01(\x05H\x00\x12\x16\n\x0c\x46reeInstance\x18\x0c \x01(\x05H\x00\x12!\n\x17\x45nterInitializationMode\x18\r \x01(\x05H\x00\x12 \n\x16\x45xitInitializationMode\x18\x0e \x01(\x05H\x00\x12\x13\n\tTerminate\x18\x0f \x01(\x05H\x00\x12\x0f\n\x05Reset\x18\x10 \x01(\x05H\x00\x12\x13\n\tSerialize\x18\x11 \x01(\x05H\x00\x12\x15\n\x0b\x44\x65serialize\x18\x12 \x01(\x05H\x00\x12#\n\x19GetDirectionalDerivatives\x18\x13 \x01(\x05H\x00\x12\x1d\n\x13SetInputDerivatives\x18\x14 \x01(\x05H\x00\x12\x1e\n\x14GetOutputDerivitives\x18\x15 \x01(\x05H\x00\x12\x14\n\nCancelStep\x18\x16 \x01(\x05H\x00\x12\x16\n\x0cGetXXXStatus\x18\x17 \x01(\x05H\x00\x42\x06\n\x04\x61rgs\"=\n\x0cStatusReturn\x12-\n\x06status\x18\x01 \x01(\x0e\x32\x1d.unifmu_fmi2_proto.Fmi2Status\"N\n\rGetRealReturn\x12-\n\x06status\x18\x01 \x01(\x0e\x32\x1d.unifmu_fmi2_proto.Fmi2Status\x12\x0e\n\x06values\x18\x02 \x03(\x01\"Q\n\x10GetIntegerReturn\x12-\n\x06status\x18\x01 \x01(\x0e\x32\x1d.unifmu_fmi2_proto.Fmi2Status\x12\x0e\n\x06values\x18\x02 \x03(\x05\"Q\n\x10GetBooleanReturn\x12-\n\x06status\x18\x01 \x01(\x0e\x32\x1d.unifmu_fmi2_proto.Fmi2Status\x12\x0e\n\x06values\x18\x02 \x03(\x08\"P\n\x0fGetStringReturn\x12-\n\x06status\x18\x01 \x01(\x0e\x32\x1d.unifmu_fmi2_proto.Fmi2Status\x12\x0e\n\x06values\x18\x02 \x03(\t\" \n\x0fSerializeReturn\x12\r\n\x05state\x18\x01 \x01(\x0c*Q\n\nFmi2Status\x12\x06\n\x02Ok\x10\x00\x12\x0b\n\x07Warning\x10\x01\x12\x0b\n\x07\x44iscard\x10\x02\x12\t\n\x05\x45rror\x10\x03\x12\t\n\x05\x46\x61tal\x10\x04\x12\x0b\n\x07Pending\x10\x05*]\n\x0e\x46mi2StatusKind\x12\x10\n\x0c\x44oStepStatus\x10\x00\x12\x11\n\rPendingStatus\x10\x01\x12\x16\n\x12LastSuccessfulTime\x10\x02\x12\x0e\n\nTerminated\x10\x03\x32\xf5\x01\n\x0bSendCommand\x12J\n\nFmi2DoStep\x12\x19.unifmu_fmi2_proto.DoStep\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12L\n\x0b\x46mi2SetReal\x12\x1a.unifmu_fmi2_proto.SetReal\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12L\n\x0b\x46mi2GetReal\x12\x19.unifmu_fmi2_proto.GetXXX\x1a .unifmu_fmi2_proto.GetRealReturn\"\x00\x42R\n%java_fmu.main.proto.unifmu_fmi2_protoB\x11UniFMU_FMI2_ProtoH\x01P\x01\xaa\x02\x11UniFMU_FMI2_Protob\x06proto3'
+  serialized_pb=b'\n\x11unifmu_fmi2.proto\x12\x11unifmu_fmi2_proto\"-\n\x07SetReal\x12\x12\n\nreferences\x18\x01 \x03(\r\x12\x0e\n\x06values\x18\x02 \x03(\x01\"0\n\nSetInteger\x12\x12\n\nreferences\x18\x01 \x03(\r\x12\x0e\n\x06values\x18\x02 \x03(\x05\"0\n\nSetBoolean\x12\x12\n\nreferences\x18\x01 \x03(\r\x12\x0e\n\x06values\x18\x02 \x03(\x08\"/\n\tSetString\x12\x12\n\nreferences\x18\x01 \x03(\r\x12\x0e\n\x06values\x18\x02 \x03(\t\"\x1c\n\x06GetXXX\x12\x12\n\nreferences\x18\x01 \x03(\r\"H\n\x06\x44oStep\x12\x14\n\x0c\x63urrent_time\x18\x01 \x01(\x01\x12\x11\n\tstep_size\x18\x02 \x01(\x01\x12\x15\n\rno_step_prior\x18\x03 \x01(\x08\"\x19\n\x17\x45nterInitializationMode\"\x18\n\x16\x45xitInitializationMode\"\x0e\n\x0c\x46reeInstance\"\x0b\n\tTerminate\"\x07\n\x05Reset\"y\n\x0fSetupExperiment\x12\x12\n\nstart_time\x18\x01 \x01(\x01\x12\x11\n\tstop_time\x18\x02 \x01(\x01\x12\x11\n\ttolerance\x18\x03 \x01(\x01\x12\x15\n\rhas_stop_time\x18\x04 \x01(\x08\x12\x15\n\rhas_tolerance\x18\x05 \x01(\x08\"\x0b\n\tSerialize\"\x1c\n\x0b\x44\x65serialize\x12\r\n\x05state\x18\x01 \x01(\x0c\"\x1b\n\x19GetDirectionalDerivatives\"\x15\n\x13SetInputDerivatives\"\x16\n\x14GetOutputDerivatives\"\x0c\n\nCancelStep\"\x0e\n\x0cGetXXXStatus\"9\n\x0fSetDebugLogging\x12\x12\n\ncategories\x18\x01 \x01(\t\x12\x12\n\nlogging_on\x18\x02 \x01(\x08\"\xc6\x04\n\x0b\x46mi2Command\x12\x10\n\x06\x44oStep\x18\x01 \x01(\x05H\x00\x12\x11\n\x07SetReal\x18\x02 \x01(\x05H\x00\x12\x14\n\nSetInteger\x18\x03 \x01(\x05H\x00\x12\x14\n\nSetBoolean\x18\x04 \x01(\x05H\x00\x12\x13\n\tSetString\x18\x05 \x01(\x05H\x00\x12\x11\n\x07GetReal\x18\x06 \x01(\x05H\x00\x12\x14\n\nGetInteger\x18\x07 \x01(\x05H\x00\x12\x14\n\nGetBoolean\x18\x08 \x01(\x05H\x00\x12\x13\n\tGetString\x18\t \x01(\x05H\x00\x12\x19\n\x0fSetDebugLogging\x18\n \x01(\x05H\x00\x12\x19\n\x0fSetupExperiment\x18\x0b \x01(\x05H\x00\x12\x16\n\x0c\x46reeInstance\x18\x0c \x01(\x05H\x00\x12!\n\x17\x45nterInitializationMode\x18\r \x01(\x05H\x00\x12 \n\x16\x45xitInitializationMode\x18\x0e \x01(\x05H\x00\x12\x13\n\tTerminate\x18\x0f \x01(\x05H\x00\x12\x0f\n\x05Reset\x18\x10 \x01(\x05H\x00\x12\x13\n\tSerialize\x18\x11 \x01(\x05H\x00\x12\x15\n\x0b\x44\x65serialize\x18\x12 \x01(\x05H\x00\x12#\n\x19GetDirectionalDerivatives\x18\x13 \x01(\x05H\x00\x12\x1d\n\x13SetInputDerivatives\x18\x14 \x01(\x05H\x00\x12\x1e\n\x14GetOutputDerivatives\x18\x15 \x01(\x05H\x00\x12\x14\n\nCancelStep\x18\x16 \x01(\x05H\x00\x12\x16\n\x0cGetXXXStatus\x18\x17 \x01(\x05H\x00\x42\x06\n\x04\x61rgs\"=\n\x0cStatusReturn\x12-\n\x06status\x18\x01 \x01(\x0e\x32\x1d.unifmu_fmi2_proto.Fmi2Status\"N\n\rGetRealReturn\x12-\n\x06status\x18\x01 \x01(\x0e\x32\x1d.unifmu_fmi2_proto.Fmi2Status\x12\x0e\n\x06values\x18\x02 \x03(\x01\"Q\n\x10GetIntegerReturn\x12-\n\x06status\x18\x01 \x01(\x0e\x32\x1d.unifmu_fmi2_proto.Fmi2Status\x12\x0e\n\x06values\x18\x02 \x03(\x05\"Q\n\x10GetBooleanReturn\x12-\n\x06status\x18\x01 \x01(\x0e\x32\x1d.unifmu_fmi2_proto.Fmi2Status\x12\x0e\n\x06values\x18\x02 \x03(\x08\"P\n\x0fGetStringReturn\x12-\n\x06status\x18\x01 \x01(\x0e\x32\x1d.unifmu_fmi2_proto.Fmi2Status\x12\x0e\n\x06values\x18\x02 \x03(\t\" \n\x0fSerializeReturn\x12\r\n\x05state\x18\x01 \x01(\x0c\"\x06\n\x04Void*Q\n\nFmi2Status\x12\x06\n\x02Ok\x10\x00\x12\x0b\n\x07Warning\x10\x01\x12\x0b\n\x07\x44iscard\x10\x02\x12\t\n\x05\x45rror\x10\x03\x12\t\n\x05\x46\x61tal\x10\x04\x12\x0b\n\x07Pending\x10\x05\x32\x8c\x0c\n\x0bSendCommand\x12L\n\x0b\x46mi2SetReal\x12\x1a.unifmu_fmi2_proto.SetReal\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12L\n\x0b\x46mi2GetReal\x12\x19.unifmu_fmi2_proto.GetXXX\x1a .unifmu_fmi2_proto.GetRealReturn\"\x00\x12R\n\x0e\x46mi2SetInteger\x12\x1d.unifmu_fmi2_proto.SetInteger\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12R\n\x0e\x46mi2GetInteger\x12\x19.unifmu_fmi2_proto.GetXXX\x1a#.unifmu_fmi2_proto.GetIntegerReturn\"\x00\x12R\n\x0e\x46mi2SetBoolean\x12\x1d.unifmu_fmi2_proto.SetBoolean\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12R\n\x0e\x46mi2GetBoolean\x12\x19.unifmu_fmi2_proto.GetXXX\x1a#.unifmu_fmi2_proto.GetBooleanReturn\"\x00\x12P\n\rFmi2SetString\x12\x1c.unifmu_fmi2_proto.SetString\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12P\n\rFmi2GetString\x12\x19.unifmu_fmi2_proto.GetXXX\x1a\".unifmu_fmi2_proto.GetStringReturn\"\x00\x12l\n\x1b\x46mi2EnterInitializationMode\x12*.unifmu_fmi2_proto.EnterInitializationMode\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12j\n\x1a\x46mi2ExitInitializationMode\x12).unifmu_fmi2_proto.ExitInitializationMode\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12P\n\rFmi2Terminate\x12\x1c.unifmu_fmi2_proto.Terminate\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12H\n\tFmi2Reset\x12\x18.unifmu_fmi2_proto.Reset\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12N\n\x10\x46mi2FreeInstance\x12\x1f.unifmu_fmi2_proto.FreeInstance\x1a\x17.unifmu_fmi2_proto.Void\"\x00\x12\\\n\x13\x46mi2SetDebugLogging\x12\".unifmu_fmi2_proto.SetDebugLogging\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12S\n\rFmi2Serialize\x12\x1c.unifmu_fmi2_proto.Serialize\x1a\".unifmu_fmi2_proto.SerializeReturn\"\x00\x12T\n\x0f\x46mi2Deserialize\x12\x1e.unifmu_fmi2_proto.Deserialize\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12J\n\nFmi2DoStep\x12\x19.unifmu_fmi2_proto.DoStep\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x12R\n\x0e\x46mi2CancelStep\x12\x1d.unifmu_fmi2_proto.CancelStep\x1a\x1f.unifmu_fmi2_proto.StatusReturn\"\x00\x42R\n%java_fmu.main.proto.unifmu_fmi2_protoB\x11UniFMU_FMI2_ProtoH\x01P\x01\xaa\x02\x11UniFMU_FMI2_Protob\x06proto3'
 )
 
 _FMI2STATUS = _descriptor.EnumDescriptor(
@@ -63,58 +63,18 @@ _FMI2STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1346,
-  serialized_end=1427,
+  serialized_start=1780,
+  serialized_end=1861,
 )
 _sym_db.RegisterEnumDescriptor(_FMI2STATUS)
 
 Fmi2Status = enum_type_wrapper.EnumTypeWrapper(_FMI2STATUS)
-_FMI2STATUSKIND = _descriptor.EnumDescriptor(
-  name='Fmi2StatusKind',
-  full_name='unifmu_fmi2_proto.Fmi2StatusKind',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='DoStepStatus', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='PendingStatus', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='LastSuccessfulTime', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Terminated', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=1429,
-  serialized_end=1522,
-)
-_sym_db.RegisterEnumDescriptor(_FMI2STATUSKIND)
-
-Fmi2StatusKind = enum_type_wrapper.EnumTypeWrapper(_FMI2STATUSKIND)
 Ok = 0
 Warning = 1
 Discard = 2
 Error = 3
 Fatal = 4
 Pending = 5
-DoStepStatus = 0
-PendingStatus = 1
-LastSuccessfulTime = 2
-Terminated = 3
 
 
 
@@ -157,23 +117,23 @@ _SETREAL = _descriptor.Descriptor(
 )
 
 
-_SETINT = _descriptor.Descriptor(
-  name='SetInt',
-  full_name='unifmu_fmi2_proto.SetInt',
+_SETINTEGER = _descriptor.Descriptor(
+  name='SetInteger',
+  full_name='unifmu_fmi2_proto.SetInteger',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='references', full_name='unifmu_fmi2_proto.SetInt.references', index=0,
+      name='references', full_name='unifmu_fmi2_proto.SetInteger.references', index=0,
       number=1, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='values', full_name='unifmu_fmi2_proto.SetInt.values', index=1,
+      name='values', full_name='unifmu_fmi2_proto.SetInteger.values', index=1,
       number=2, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -192,7 +152,7 @@ _SETINT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=87,
-  serialized_end=131,
+  serialized_end=135,
 )
 
 
@@ -230,8 +190,8 @@ _SETBOOLEAN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=133,
-  serialized_end=181,
+  serialized_start=137,
+  serialized_end=185,
 )
 
 
@@ -269,8 +229,8 @@ _SETSTRING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=183,
-  serialized_end=230,
+  serialized_start=187,
+  serialized_end=234,
 )
 
 
@@ -301,8 +261,8 @@ _GETXXX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=232,
-  serialized_end=260,
+  serialized_start=236,
+  serialized_end=264,
 )
 
 
@@ -347,8 +307,414 @@ _DOSTEP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=262,
-  serialized_end=334,
+  serialized_start=266,
+  serialized_end=338,
+)
+
+
+_ENTERINITIALIZATIONMODE = _descriptor.Descriptor(
+  name='EnterInitializationMode',
+  full_name='unifmu_fmi2_proto.EnterInitializationMode',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=340,
+  serialized_end=365,
+)
+
+
+_EXITINITIALIZATIONMODE = _descriptor.Descriptor(
+  name='ExitInitializationMode',
+  full_name='unifmu_fmi2_proto.ExitInitializationMode',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=367,
+  serialized_end=391,
+)
+
+
+_FREEINSTANCE = _descriptor.Descriptor(
+  name='FreeInstance',
+  full_name='unifmu_fmi2_proto.FreeInstance',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=393,
+  serialized_end=407,
+)
+
+
+_TERMINATE = _descriptor.Descriptor(
+  name='Terminate',
+  full_name='unifmu_fmi2_proto.Terminate',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=409,
+  serialized_end=420,
+)
+
+
+_RESET = _descriptor.Descriptor(
+  name='Reset',
+  full_name='unifmu_fmi2_proto.Reset',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=422,
+  serialized_end=429,
+)
+
+
+_SETUPEXPERIMENT = _descriptor.Descriptor(
+  name='SetupExperiment',
+  full_name='unifmu_fmi2_proto.SetupExperiment',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='start_time', full_name='unifmu_fmi2_proto.SetupExperiment.start_time', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stop_time', full_name='unifmu_fmi2_proto.SetupExperiment.stop_time', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tolerance', full_name='unifmu_fmi2_proto.SetupExperiment.tolerance', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_stop_time', full_name='unifmu_fmi2_proto.SetupExperiment.has_stop_time', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_tolerance', full_name='unifmu_fmi2_proto.SetupExperiment.has_tolerance', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=431,
+  serialized_end=552,
+)
+
+
+_SERIALIZE = _descriptor.Descriptor(
+  name='Serialize',
+  full_name='unifmu_fmi2_proto.Serialize',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=554,
+  serialized_end=565,
+)
+
+
+_DESERIALIZE = _descriptor.Descriptor(
+  name='Deserialize',
+  full_name='unifmu_fmi2_proto.Deserialize',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='state', full_name='unifmu_fmi2_proto.Deserialize.state', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=567,
+  serialized_end=595,
+)
+
+
+_GETDIRECTIONALDERIVATIVES = _descriptor.Descriptor(
+  name='GetDirectionalDerivatives',
+  full_name='unifmu_fmi2_proto.GetDirectionalDerivatives',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=597,
+  serialized_end=624,
+)
+
+
+_SETINPUTDERIVATIVES = _descriptor.Descriptor(
+  name='SetInputDerivatives',
+  full_name='unifmu_fmi2_proto.SetInputDerivatives',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=626,
+  serialized_end=647,
+)
+
+
+_GETOUTPUTDERIVATIVES = _descriptor.Descriptor(
+  name='GetOutputDerivatives',
+  full_name='unifmu_fmi2_proto.GetOutputDerivatives',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=649,
+  serialized_end=671,
+)
+
+
+_CANCELSTEP = _descriptor.Descriptor(
+  name='CancelStep',
+  full_name='unifmu_fmi2_proto.CancelStep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=673,
+  serialized_end=685,
+)
+
+
+_GETXXXSTATUS = _descriptor.Descriptor(
+  name='GetXXXStatus',
+  full_name='unifmu_fmi2_proto.GetXXXStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=687,
+  serialized_end=701,
+)
+
+
+_SETDEBUGLOGGING = _descriptor.Descriptor(
+  name='SetDebugLogging',
+  full_name='unifmu_fmi2_proto.SetDebugLogging',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='categories', full_name='unifmu_fmi2_proto.SetDebugLogging.categories', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logging_on', full_name='unifmu_fmi2_proto.SetDebugLogging.logging_on', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=703,
+  serialized_end=760,
 )
 
 
@@ -501,7 +867,7 @@ _FMI2COMMAND = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='GetOutputDerivitives', full_name='unifmu_fmi2_proto.Fmi2Command.GetOutputDerivitives', index=20,
+      name='GetOutputDerivatives', full_name='unifmu_fmi2_proto.Fmi2Command.GetOutputDerivatives', index=20,
       number=21, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -538,8 +904,8 @@ _FMI2COMMAND = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=337,
-  serialized_end=919,
+  serialized_start=763,
+  serialized_end=1345,
 )
 
 
@@ -570,8 +936,8 @@ _STATUSRETURN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=921,
-  serialized_end=982,
+  serialized_start=1347,
+  serialized_end=1408,
 )
 
 
@@ -609,8 +975,8 @@ _GETREALRETURN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=984,
-  serialized_end=1062,
+  serialized_start=1410,
+  serialized_end=1488,
 )
 
 
@@ -648,8 +1014,8 @@ _GETINTEGERRETURN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1064,
-  serialized_end=1145,
+  serialized_start=1490,
+  serialized_end=1571,
 )
 
 
@@ -687,8 +1053,8 @@ _GETBOOLEANRETURN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1147,
-  serialized_end=1228,
+  serialized_start=1573,
+  serialized_end=1654,
 )
 
 
@@ -726,8 +1092,8 @@ _GETSTRINGRETURN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1230,
-  serialized_end=1310,
+  serialized_start=1656,
+  serialized_end=1736,
 )
 
 
@@ -758,8 +1124,33 @@ _SERIALIZERETURN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1312,
-  serialized_end=1344,
+  serialized_start=1738,
+  serialized_end=1770,
+)
+
+
+_VOID = _descriptor.Descriptor(
+  name='Void',
+  full_name='unifmu_fmi2_proto.Void',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1772,
+  serialized_end=1778,
 )
 
 _FMI2COMMAND.oneofs_by_name['args'].fields.append(
@@ -823,8 +1214,8 @@ _FMI2COMMAND.oneofs_by_name['args'].fields.append(
   _FMI2COMMAND.fields_by_name['SetInputDerivatives'])
 _FMI2COMMAND.fields_by_name['SetInputDerivatives'].containing_oneof = _FMI2COMMAND.oneofs_by_name['args']
 _FMI2COMMAND.oneofs_by_name['args'].fields.append(
-  _FMI2COMMAND.fields_by_name['GetOutputDerivitives'])
-_FMI2COMMAND.fields_by_name['GetOutputDerivitives'].containing_oneof = _FMI2COMMAND.oneofs_by_name['args']
+  _FMI2COMMAND.fields_by_name['GetOutputDerivatives'])
+_FMI2COMMAND.fields_by_name['GetOutputDerivatives'].containing_oneof = _FMI2COMMAND.oneofs_by_name['args']
 _FMI2COMMAND.oneofs_by_name['args'].fields.append(
   _FMI2COMMAND.fields_by_name['CancelStep'])
 _FMI2COMMAND.fields_by_name['CancelStep'].containing_oneof = _FMI2COMMAND.oneofs_by_name['args']
@@ -837,11 +1228,25 @@ _GETINTEGERRETURN.fields_by_name['status'].enum_type = _FMI2STATUS
 _GETBOOLEANRETURN.fields_by_name['status'].enum_type = _FMI2STATUS
 _GETSTRINGRETURN.fields_by_name['status'].enum_type = _FMI2STATUS
 DESCRIPTOR.message_types_by_name['SetReal'] = _SETREAL
-DESCRIPTOR.message_types_by_name['SetInt'] = _SETINT
+DESCRIPTOR.message_types_by_name['SetInteger'] = _SETINTEGER
 DESCRIPTOR.message_types_by_name['SetBoolean'] = _SETBOOLEAN
 DESCRIPTOR.message_types_by_name['SetString'] = _SETSTRING
 DESCRIPTOR.message_types_by_name['GetXXX'] = _GETXXX
 DESCRIPTOR.message_types_by_name['DoStep'] = _DOSTEP
+DESCRIPTOR.message_types_by_name['EnterInitializationMode'] = _ENTERINITIALIZATIONMODE
+DESCRIPTOR.message_types_by_name['ExitInitializationMode'] = _EXITINITIALIZATIONMODE
+DESCRIPTOR.message_types_by_name['FreeInstance'] = _FREEINSTANCE
+DESCRIPTOR.message_types_by_name['Terminate'] = _TERMINATE
+DESCRIPTOR.message_types_by_name['Reset'] = _RESET
+DESCRIPTOR.message_types_by_name['SetupExperiment'] = _SETUPEXPERIMENT
+DESCRIPTOR.message_types_by_name['Serialize'] = _SERIALIZE
+DESCRIPTOR.message_types_by_name['Deserialize'] = _DESERIALIZE
+DESCRIPTOR.message_types_by_name['GetDirectionalDerivatives'] = _GETDIRECTIONALDERIVATIVES
+DESCRIPTOR.message_types_by_name['SetInputDerivatives'] = _SETINPUTDERIVATIVES
+DESCRIPTOR.message_types_by_name['GetOutputDerivatives'] = _GETOUTPUTDERIVATIVES
+DESCRIPTOR.message_types_by_name['CancelStep'] = _CANCELSTEP
+DESCRIPTOR.message_types_by_name['GetXXXStatus'] = _GETXXXSTATUS
+DESCRIPTOR.message_types_by_name['SetDebugLogging'] = _SETDEBUGLOGGING
 DESCRIPTOR.message_types_by_name['Fmi2Command'] = _FMI2COMMAND
 DESCRIPTOR.message_types_by_name['StatusReturn'] = _STATUSRETURN
 DESCRIPTOR.message_types_by_name['GetRealReturn'] = _GETREALRETURN
@@ -849,8 +1254,8 @@ DESCRIPTOR.message_types_by_name['GetIntegerReturn'] = _GETINTEGERRETURN
 DESCRIPTOR.message_types_by_name['GetBooleanReturn'] = _GETBOOLEANRETURN
 DESCRIPTOR.message_types_by_name['GetStringReturn'] = _GETSTRINGRETURN
 DESCRIPTOR.message_types_by_name['SerializeReturn'] = _SERIALIZERETURN
+DESCRIPTOR.message_types_by_name['Void'] = _VOID
 DESCRIPTOR.enum_types_by_name['Fmi2Status'] = _FMI2STATUS
-DESCRIPTOR.enum_types_by_name['Fmi2StatusKind'] = _FMI2STATUSKIND
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 SetReal = _reflection.GeneratedProtocolMessageType('SetReal', (_message.Message,), {
@@ -860,12 +1265,12 @@ SetReal = _reflection.GeneratedProtocolMessageType('SetReal', (_message.Message,
   })
 _sym_db.RegisterMessage(SetReal)
 
-SetInt = _reflection.GeneratedProtocolMessageType('SetInt', (_message.Message,), {
-  'DESCRIPTOR' : _SETINT,
+SetInteger = _reflection.GeneratedProtocolMessageType('SetInteger', (_message.Message,), {
+  'DESCRIPTOR' : _SETINTEGER,
   '__module__' : 'unifmu_fmi2_pb2'
-  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.SetInt)
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.SetInteger)
   })
-_sym_db.RegisterMessage(SetInt)
+_sym_db.RegisterMessage(SetInteger)
 
 SetBoolean = _reflection.GeneratedProtocolMessageType('SetBoolean', (_message.Message,), {
   'DESCRIPTOR' : _SETBOOLEAN,
@@ -894,6 +1299,104 @@ DoStep = _reflection.GeneratedProtocolMessageType('DoStep', (_message.Message,),
   # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.DoStep)
   })
 _sym_db.RegisterMessage(DoStep)
+
+EnterInitializationMode = _reflection.GeneratedProtocolMessageType('EnterInitializationMode', (_message.Message,), {
+  'DESCRIPTOR' : _ENTERINITIALIZATIONMODE,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.EnterInitializationMode)
+  })
+_sym_db.RegisterMessage(EnterInitializationMode)
+
+ExitInitializationMode = _reflection.GeneratedProtocolMessageType('ExitInitializationMode', (_message.Message,), {
+  'DESCRIPTOR' : _EXITINITIALIZATIONMODE,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.ExitInitializationMode)
+  })
+_sym_db.RegisterMessage(ExitInitializationMode)
+
+FreeInstance = _reflection.GeneratedProtocolMessageType('FreeInstance', (_message.Message,), {
+  'DESCRIPTOR' : _FREEINSTANCE,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.FreeInstance)
+  })
+_sym_db.RegisterMessage(FreeInstance)
+
+Terminate = _reflection.GeneratedProtocolMessageType('Terminate', (_message.Message,), {
+  'DESCRIPTOR' : _TERMINATE,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.Terminate)
+  })
+_sym_db.RegisterMessage(Terminate)
+
+Reset = _reflection.GeneratedProtocolMessageType('Reset', (_message.Message,), {
+  'DESCRIPTOR' : _RESET,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.Reset)
+  })
+_sym_db.RegisterMessage(Reset)
+
+SetupExperiment = _reflection.GeneratedProtocolMessageType('SetupExperiment', (_message.Message,), {
+  'DESCRIPTOR' : _SETUPEXPERIMENT,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.SetupExperiment)
+  })
+_sym_db.RegisterMessage(SetupExperiment)
+
+Serialize = _reflection.GeneratedProtocolMessageType('Serialize', (_message.Message,), {
+  'DESCRIPTOR' : _SERIALIZE,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.Serialize)
+  })
+_sym_db.RegisterMessage(Serialize)
+
+Deserialize = _reflection.GeneratedProtocolMessageType('Deserialize', (_message.Message,), {
+  'DESCRIPTOR' : _DESERIALIZE,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.Deserialize)
+  })
+_sym_db.RegisterMessage(Deserialize)
+
+GetDirectionalDerivatives = _reflection.GeneratedProtocolMessageType('GetDirectionalDerivatives', (_message.Message,), {
+  'DESCRIPTOR' : _GETDIRECTIONALDERIVATIVES,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.GetDirectionalDerivatives)
+  })
+_sym_db.RegisterMessage(GetDirectionalDerivatives)
+
+SetInputDerivatives = _reflection.GeneratedProtocolMessageType('SetInputDerivatives', (_message.Message,), {
+  'DESCRIPTOR' : _SETINPUTDERIVATIVES,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.SetInputDerivatives)
+  })
+_sym_db.RegisterMessage(SetInputDerivatives)
+
+GetOutputDerivatives = _reflection.GeneratedProtocolMessageType('GetOutputDerivatives', (_message.Message,), {
+  'DESCRIPTOR' : _GETOUTPUTDERIVATIVES,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.GetOutputDerivatives)
+  })
+_sym_db.RegisterMessage(GetOutputDerivatives)
+
+CancelStep = _reflection.GeneratedProtocolMessageType('CancelStep', (_message.Message,), {
+  'DESCRIPTOR' : _CANCELSTEP,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.CancelStep)
+  })
+_sym_db.RegisterMessage(CancelStep)
+
+GetXXXStatus = _reflection.GeneratedProtocolMessageType('GetXXXStatus', (_message.Message,), {
+  'DESCRIPTOR' : _GETXXXSTATUS,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.GetXXXStatus)
+  })
+_sym_db.RegisterMessage(GetXXXStatus)
+
+SetDebugLogging = _reflection.GeneratedProtocolMessageType('SetDebugLogging', (_message.Message,), {
+  'DESCRIPTOR' : _SETDEBUGLOGGING,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.SetDebugLogging)
+  })
+_sym_db.RegisterMessage(SetDebugLogging)
 
 Fmi2Command = _reflection.GeneratedProtocolMessageType('Fmi2Command', (_message.Message,), {
   'DESCRIPTOR' : _FMI2COMMAND,
@@ -944,6 +1447,13 @@ SerializeReturn = _reflection.GeneratedProtocolMessageType('SerializeReturn', (_
   })
 _sym_db.RegisterMessage(SerializeReturn)
 
+Void = _reflection.GeneratedProtocolMessageType('Void', (_message.Message,), {
+  'DESCRIPTOR' : _VOID,
+  '__module__' : 'unifmu_fmi2_pb2'
+  # @@protoc_insertion_point(class_scope:unifmu_fmi2_proto.Void)
+  })
+_sym_db.RegisterMessage(Void)
+
 
 DESCRIPTOR._options = None
 
@@ -954,23 +1464,13 @@ _SENDCOMMAND = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1525,
-  serialized_end=1770,
+  serialized_start=1864,
+  serialized_end=3412,
   methods=[
-  _descriptor.MethodDescriptor(
-    name='Fmi2DoStep',
-    full_name='unifmu_fmi2_proto.SendCommand.Fmi2DoStep',
-    index=0,
-    containing_service=None,
-    input_type=_DOSTEP,
-    output_type=_STATUSRETURN,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
   _descriptor.MethodDescriptor(
     name='Fmi2SetReal',
     full_name='unifmu_fmi2_proto.SendCommand.Fmi2SetReal',
-    index=1,
+    index=0,
     containing_service=None,
     input_type=_SETREAL,
     output_type=_STATUSRETURN,
@@ -980,10 +1480,170 @@ _SENDCOMMAND = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Fmi2GetReal',
     full_name='unifmu_fmi2_proto.SendCommand.Fmi2GetReal',
-    index=2,
+    index=1,
     containing_service=None,
     input_type=_GETXXX,
     output_type=_GETREALRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2SetInteger',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2SetInteger',
+    index=2,
+    containing_service=None,
+    input_type=_SETINTEGER,
+    output_type=_STATUSRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2GetInteger',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2GetInteger',
+    index=3,
+    containing_service=None,
+    input_type=_GETXXX,
+    output_type=_GETINTEGERRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2SetBoolean',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2SetBoolean',
+    index=4,
+    containing_service=None,
+    input_type=_SETBOOLEAN,
+    output_type=_STATUSRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2GetBoolean',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2GetBoolean',
+    index=5,
+    containing_service=None,
+    input_type=_GETXXX,
+    output_type=_GETBOOLEANRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2SetString',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2SetString',
+    index=6,
+    containing_service=None,
+    input_type=_SETSTRING,
+    output_type=_STATUSRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2GetString',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2GetString',
+    index=7,
+    containing_service=None,
+    input_type=_GETXXX,
+    output_type=_GETSTRINGRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2EnterInitializationMode',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2EnterInitializationMode',
+    index=8,
+    containing_service=None,
+    input_type=_ENTERINITIALIZATIONMODE,
+    output_type=_STATUSRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2ExitInitializationMode',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2ExitInitializationMode',
+    index=9,
+    containing_service=None,
+    input_type=_EXITINITIALIZATIONMODE,
+    output_type=_STATUSRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2Terminate',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2Terminate',
+    index=10,
+    containing_service=None,
+    input_type=_TERMINATE,
+    output_type=_STATUSRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2Reset',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2Reset',
+    index=11,
+    containing_service=None,
+    input_type=_RESET,
+    output_type=_STATUSRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2FreeInstance',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2FreeInstance',
+    index=12,
+    containing_service=None,
+    input_type=_FREEINSTANCE,
+    output_type=_VOID,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2SetDebugLogging',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2SetDebugLogging',
+    index=13,
+    containing_service=None,
+    input_type=_SETDEBUGLOGGING,
+    output_type=_STATUSRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2Serialize',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2Serialize',
+    index=14,
+    containing_service=None,
+    input_type=_SERIALIZE,
+    output_type=_SERIALIZERETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2Deserialize',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2Deserialize',
+    index=15,
+    containing_service=None,
+    input_type=_DESERIALIZE,
+    output_type=_STATUSRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2DoStep',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2DoStep',
+    index=16,
+    containing_service=None,
+    input_type=_DOSTEP,
+    output_type=_STATUSRETURN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Fmi2CancelStep',
+    full_name='unifmu_fmi2_proto.SendCommand.Fmi2CancelStep',
+    index=17,
+    containing_service=None,
+    input_type=_CANCELSTEP,
+    output_type=_STATUSRETURN,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

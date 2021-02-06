@@ -15,9 +15,43 @@ option optimize_for = SPEED; // optimize the code to be fast, read https://devel
 
 
 service SendCommand{
-    rpc Fmi2DoStep(DoStep) returns (StatusReturn) {}
+    // Set and Get variable value methods
     rpc Fmi2SetReal(SetReal) returns (StatusReturn) {}
     rpc Fmi2GetReal(GetXXX) returns (GetRealReturn) {}
+    rpc Fmi2SetInteger(SetInteger) returns (StatusReturn) {}
+    rpc Fmi2GetInteger(GetXXX) returns (GetIntegerReturn) {}
+    rpc Fmi2SetBoolean(SetBoolean) returns (StatusReturn) {}
+    rpc Fmi2GetBoolean(GetXXX) returns (GetBooleanReturn) {}
+    rpc Fmi2SetString(SetString) returns (StatusReturn) {}
+    rpc Fmi2GetString(GetXXX) returns (GetStringReturn) {}
+
+    // Initialization, termination and resetting fmus
+    rpc Fmi2EnterInitializationMode(EnterInitializationMode) returns (StatusReturn) {}
+    rpc Fmi2ExitInitializationMode(ExitInitializationMode) returns (StatusReturn) {}
+    rpc Fmi2Terminate(Terminate) returns (StatusReturn) {}
+    rpc Fmi2Reset(Reset) returns (StatusReturn) {}
+
+    // Creation, destruction and logging of fmu instances
+    rpc Fmi2FreeInstance(FreeInstance) returns (Void) {}
+    rpc Fmi2SetDebugLogging(SetDebugLogging) returns (StatusReturn) {}
+
+    // Setting and Getting complete fmu state
+    rpc Fmi2Serialize(Serialize) returns (SerializeReturn) {}
+    rpc Fmi2Deserialize(Deserialize) returns (StatusReturn) {} // TODO: check how this should be implemented
+    // todo rest of the functions
+
+    // Getting partial derivatives
+    // todo
+
+    // 4.2.1 Transfer of input/output values and parameters
+    // todo
+
+    // 4.2.2 Computation
+    rpc Fmi2DoStep(DoStep) returns (StatusReturn) {}
+    rpc Fmi2CancelStep(CancelStep) returns (StatusReturn) {}
+
+    // 4.2.3 Retrieving status information from the slave
+    // todo
 }
 
 
@@ -26,7 +60,7 @@ message SetReal{
     repeated double values = 2;
 }
 
-message SetInt{
+message SetInteger{
     repeated uint32 references = 1;
     repeated int32 values = 2;
 }
@@ -52,6 +86,49 @@ message DoStep{
 }
 
 
+message EnterInitializationMode{}
+
+message ExitInitializationMode{}
+
+message FreeInstance{}
+
+message Terminate{}
+
+message Reset{}
+
+message SetupExperiment{   
+    double start_time = 1;
+    // currently optional scalars are not supported by python
+    // until supported we will use extra bool fields
+    // stop_time: double=null;
+    // tolerance: double=null;
+    double stop_time = 2;
+    double tolerance = 3;
+    bool has_stop_time = 4;
+    bool has_tolerance = 5;
+}
+
+message Serialize{}
+
+message Deserialize{
+    bytes state = 1;
+}
+
+message GetDirectionalDerivatives{}
+
+message SetInputDerivatives{}
+
+message GetOutputDerivatives{}
+
+message CancelStep{}
+
+message GetXXXStatus{}
+
+message SetDebugLogging{
+    string categories = 1;
+    bool logging_on = 2;
+}
+
 message Fmi2Command{
     oneof args {
         // Field numbers between 1-15 only use one byte, therefore the functions that are called the most will be between 1-15
@@ -76,7 +153,7 @@ message Fmi2Command{
         // Co-sim
         int32 GetDirectionalDerivatives = 19;
         int32 SetInputDerivatives = 20;
-        int32 GetOutputDerivitives = 21;
+        int32 GetOutputDerivatives = 21;
         int32 CancelStep = 22;
         int32 GetXXXStatus = 23;
     }
@@ -126,4 +203,10 @@ message GetStringReturn{
 
 message SerializeReturn{
     bytes state = 1;
+}
+
+
+//  cannot define void return message, see https://groups.google.com/g/protobuf/c/4SCxInAktSc?pli=1 
+message Void{
+
 }
