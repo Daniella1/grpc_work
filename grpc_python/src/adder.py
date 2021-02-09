@@ -4,7 +4,7 @@ from typing import Tuple
 
 import sys
 sys.path.insert(1, 'schema/')
-from unifmu_fmi2_pb2 import Fmi2Status
+from unifmu_fmi2_pb2 import FmiStatus
 
 
 class Adder():
@@ -41,7 +41,7 @@ class Adder():
                 self.string_b,
             )
         )
-        return Fmi2Status.Ok, bytes
+        return FmiStatus.Ok, bytes
 
     def deserialize(self, bytes) -> int:
         (
@@ -63,7 +63,7 @@ class Adder():
         self.string_a = string_a
         self.string_b = string_b
 
-        return Fmi2Status.ok
+        return FmiStatus.ok
 
     @property
     def real_c(self):

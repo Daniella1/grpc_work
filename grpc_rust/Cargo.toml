@@ -6,28 +6,26 @@ version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[[bin]] # Bin to run the HelloWorld gRPC server
-name = "helloworld-server"
-path = "src/helloworld_server.rs"
+# [[bin]] # Bin to run the HelloWorld gRPC server
+# name = "helloworld-server"
+# path = "src/helloworld_server.rs"
 
-[[bin]] # Bin to run the HelloWorld gRPC client
-name = "helloworld-client"
-path = "src/helloworld_client.rs"
-
-[[bin]] # Bin to run the HelloWorld gRPC server
-name = "unifmu-server"
-path = "src/unifmu_server.rs"
+# [[bin]] # Bin to run the HelloWorld gRPC client
+# name = "helloworld-client"
+# path = "src/helloworld_client.rs"
 
 [[bin]] # Bin to run the HelloWorld gRPC client
 name = "unifmu-client"
 path = "src/unifmu_client.rs"
 
-[[bin]]
-name = "builder"
-path = "build.rs"
+# [[bin]]
+# name = "builder"
+# path = "build.rs"
 
 [dependencies]
+num_enum = "*"
 prost = "0.7"
+serde = {version = "*", features = ["derive"]}
 tokio = {version = "*", features = ["rt-multi-thread", "time", "fs", "macros", "net"]}
 tonic = "0.4"
 tonic-build = "0.4"

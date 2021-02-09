@@ -36,8 +36,8 @@ service SendCommand{
     rpc Fmi2SetDebugLogging(SetDebugLogging) returns (StatusReturn) {}
 
     // Setting and Getting complete fmu state
-    rpc Fmi2Serialize(Serialize) returns (SerializeReturn) {}
-    rpc Fmi2Deserialize(Deserialize) returns (StatusReturn) {} // TODO: check how this should be implemented
+    rpc Serialize(SerializeMessage) returns (StatusReturn) {}
+    rpc Deserialize(DeserializeMessage) returns (StatusReturn) {} // TODO: check how this should be implemented
     // todo rest of the functions
 
     // Getting partial derivatives
@@ -108,9 +108,9 @@ message SetupExperiment{
     bool has_tolerance = 5;
 }
 
-message Serialize{}
+message SerializeMessage{}
 
-message Deserialize{
+message DeserializeMessage{
     bytes state = 1;
 }
 
@@ -166,7 +166,7 @@ message Fmi2Command{
 // several FMI2 operations simply return a status
 // this is used as a common return type
 
-enum Fmi2Status
+enum FmiStatus
 {
     Ok = 0;
     Warning=1;
@@ -177,27 +177,27 @@ enum Fmi2Status
 }
 
 message StatusReturn{
-    Fmi2Status status = 1;
+    FmiStatus status = 1;
 }
 
 message GetRealReturn{
-    Fmi2Status status = 1;
+    FmiStatus status = 1;
     repeated double values = 2;
 }
 
 
 message GetIntegerReturn{
-    Fmi2Status status = 1;
+    FmiStatus status = 1;
     repeated int32 values = 2;
 }
 
 message GetBooleanReturn{
-    Fmi2Status status = 1;
+    FmiStatus status = 1;
     repeated bool values = 2;
 }
 
 message GetStringReturn{
-    Fmi2Status status = 1;
+    FmiStatus status = 1;
     repeated string values = 2;
 }
 

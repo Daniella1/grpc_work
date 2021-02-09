@@ -15,7 +15,6 @@ import logging
 import grpc
 
 from generate_from_proto import generate_schema
-from unifmu_fmi2_pb2 import Fmi2Status
 import unifmu_fmi2_pb2_grpc
 
 
