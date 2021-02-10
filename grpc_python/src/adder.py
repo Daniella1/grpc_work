@@ -1,28 +1,28 @@
 import pickle
 from typing import Tuple
 
-
+from fmi2 import Fmi2FMU
 import sys
-sys.path.insert(1, 'schema/')
-from unifmu_fmi2_pb2 import FmiStatus
+from fmi2 import Fmi2FMU, Fmi2Status
 
-
-class Adder():
-    def __init__(self, reference_to_attr) -> None:
-
+class Adder(Fmi2FMU):
+    def __init__(self,reference_to_attr=None) -> None:
+        super().__init__(reference_to_attr)
         self.real_a = 0.0
         self.real_b = 0.0
 
         self.integer_a = 0
         self.integer_b = 0
-
+        
         self.boolean_a = False
         self.boolean_b = False
 
         self.string_a = ""
         self.string_b = ""
+
+        self._update_outputs()
+
         
-        self.reference_to_attr = reference_to_attr
 
     def __repr__(self):
         return "Adder"
@@ -41,7 +41,7 @@ class Adder():
                 self.string_b,
             )
         )
-        return FmiStatus.Ok, bytes
+        return Fmi2Status.ok, bytes
 
     def deserialize(self, bytes) -> int:
         (
@@ -63,21 +63,18 @@ class Adder():
         self.string_a = string_a
         self.string_b = string_b
 
-        return FmiStatus.ok
+        return Fmi2Status.ok
 
-    @property
-    def real_c(self):
-        return self.real_a + self.real_b
+    def _update_outputs(self):
+        self.real_c = self.real_a + self.real_b
+        self.integer_c = self.integer_a + self.integer_b
+        self.boolean_c = self.boolean_a and self.boolean_b
+        self.string_c = self.string_a + self.string_b
 
-    @property
-    def integer_c(self):
-        return self.integer_a + self.integer_b
+    def do_step(self, current_time, step_size, no_step_prior):
+        
+        self._update_outputs()
 
-    @property
-    def boolean_c(self):
-        return self.boolean_a and self.boolean_b
-
-    @property
-    def string_c(self):
-        return self.string_a + self.string_b
+        return Fmi2Status.ok
+        
 

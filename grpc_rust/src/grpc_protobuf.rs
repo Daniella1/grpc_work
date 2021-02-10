@@ -1,14 +1,11 @@
 #![allow(non_snake_case)]
+use crate::unifmu_fmi2_proto;
 use num_enum::TryFromPrimitive;
 use std::convert::TryInto;
 use tokio::runtime::{Builder, Runtime};
 use unifmu_fmi2_proto::send_command_client::SendCommandClient;
 
 // Must have compiled the proto file before using this
-
-pub mod unifmu_fmi2_proto {
-    tonic::include_proto!("unifmu_fmi2_proto");
-}
 
 // To make a blocking grpc client, we follow: https://github.com/hyperium/tonic/blob/master/examples/src/blocking/client.rs
 type StdError = Box<dyn std::error::Error + Send + Sync + 'static>;
@@ -92,7 +89,16 @@ pub trait Fmi2CommandRPC {
 
 impl Fmi2CommandRPC for GRPC_Protobuf_Client {
     fn fmi2DoStep(&mut self, current_time: f64, step_size: f64, no_step_prior: bool) -> Fmi2Status {
-        todo!()
+        let args = tonic::Request::new(unifmu_fmi2_proto::DoStep {
+            current_time: current_time,
+            step_size: step_size,
+            no_step_prior: no_step_prior
+        });
+
+        match self.rt.block_on(self.client.fmi2_do_step(args)) {
+            Ok(s) => s.into_inner().status.try_into().unwrap(),
+            Err(_) => Fmi2Status::Fmi2Error,
+        }
     }
 
     fn fmi2CancelStep(&mut self) -> Fmi2Status {

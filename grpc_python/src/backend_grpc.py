@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 from argparse import ArgumentParser
 from pathlib import Path
 
-from command_server import CommandServicer
+# from command_server import CommandServicer
 from adder import Adder
 
 from concurrent import futures
@@ -16,7 +16,7 @@ import grpc
 
 from generate_from_proto import generate_schema
 import unifmu_fmi2_pb2_grpc
-
+from command_server import CommandServicer
 
 def serve(fmuInstance):
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
