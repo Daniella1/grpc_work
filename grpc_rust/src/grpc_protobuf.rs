@@ -1,7 +1,10 @@
 #![allow(non_snake_case)]
 use crate::unifmu_fmi2_proto;
 use num_enum::TryFromPrimitive;
-use std::convert::TryInto;
+use std::{
+    convert::TryInto,
+    ptr::{null, null_mut},
+};
 use tokio::runtime::{Builder, Runtime};
 use unifmu_fmi2_proto::send_command_client::SendCommandClient;
 
@@ -21,7 +24,11 @@ impl GRPC_Protobuf_Client {
         D: std::convert::TryInto<tonic::transport::Endpoint>,
         D::Error: Into<StdError>,
     {
-        let rt = Builder::new_multi_thread().enable_all().build().unwrap();
+        let rt = Builder::new_multi_thread()
+            .worker_threads(1)
+            .enable_all()
+            .build()
+            .unwrap();
         let client = rt.block_on(SendCommandClient::connect(dst))?;
 
         Ok(Self { rt, client })
@@ -92,7 +99,7 @@ impl Fmi2CommandRPC for GRPC_Protobuf_Client {
         let args = tonic::Request::new(unifmu_fmi2_proto::DoStep {
             current_time: current_time,
             step_size: step_size,
-            no_step_prior: no_step_prior
+            no_step_prior: no_step_prior,
         });
 
         match self.rt.block_on(self.client.fmi2_do_step(args)) {
@@ -115,7 +122,32 @@ impl Fmi2CommandRPC for GRPC_Protobuf_Client {
         stop_time: Option<f64>,
         tolerance: Option<f64>,
     ) -> Fmi2Status {
-        todo!()
+        //     let mut has_stop_time = false;
+        //     let mut has_tolerance = false;
+        //     if stop_time != None {
+        //         has_stop_time = true;
+        //     } else {
+        //         has_stop_time = false;
+        //     }
+        //     if tolerance != None {
+        //         has_tolerance = true;
+        //     } else {
+        //         has_tolerance = false;
+        //     }
+
+        //     let args = tonic::Request::new(unifmu_fmi2_proto::SetupExperiment {
+        //         start_time: start_time,
+        //         stop_time: stop_time.unwrap(),
+        //         tolerance: tolerance.unwrap(),
+        //         has_stop_time: has_stop_time,
+        //         has_tolerance: has_tolerance,
+        //     });
+
+        //     match self.rt.block_on(self.client.fmi2_setup_experiment(args)) {
+        //         Ok(s) => s.into_inner().status.try_into().unwrap(),
+        //         Err(_) => Fmi2Status::Fmi2Error,
+        //     }
+        todo!();
     }
 
     fn fmi2EnterInitializationMode(&mut self) -> Fmi2Status {

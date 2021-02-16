@@ -1,0 +1,28 @@
+syntax = "proto3";
+package handshake_proto;
+
+
+// JAVA
+option java_multiple_files = true;
+option java_package = "java_fmu.main.proto.handshake_proto";
+option java_outer_classname = "HandshakeProto";
+
+// C#
+option csharp_namespace = "HandshakeProto";
+
+// optimization
+option optimize_for = SPEED; // optimize the code to be fast, read https://developers.google.com/protocol-buffers/docs/proto#options
+
+
+// The greeting service definition.
+service Handshaker {
+    // Send a message for performing a handshake
+    rpc PerformHandshake (HandshakeInfo) returns (HandshakeInfo) {}
+  }
+  
+  // Message containing the handshake information
+  message HandshakeInfo {
+    string ip_address = 1;
+    string port = 2;
+  }
+  

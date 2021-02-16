@@ -27,8 +27,8 @@ num_enum = "*"
 prost = "0.7"
 serde = {version = "*", features = ["derive"]}
 tokio = {version = "*", features = ["rt-multi-thread", "time", "fs", "macros", "net"]}
-tonic = "0.4"
-tonic-build = "0.4"
+tonic = "*"
+tonic-build = "*"
 
 [build-dependencies]
-tonic-build = "0.4"
+tonic-build = "*"
