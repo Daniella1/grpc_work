@@ -6,6 +6,8 @@ pub struct HandshakeInfo {
     #[prost(string, tag = "2")]
     pub port: ::prost::alloc::string::String,
 }
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Void {}
 #[doc = r" Generated client implementations."]
 pub mod handshaker_client {
     #![allow(unused_variables, dead_code, missing_docs)]
@@ -44,7 +46,7 @@ pub mod handshaker_client {
         pub async fn perform_handshake(
             &mut self,
             request: impl tonic::IntoRequest<super::HandshakeInfo>,
-        ) -> Result<tonic::Response<super::HandshakeInfo>, tonic::Status> {
+        ) -> Result<tonic::Response<super::Void>, tonic::Status> {
             self.inner.ready().await.map_err(|e| {
                 tonic::Status::new(
                     tonic::Code::Unknown,
@@ -82,7 +84,7 @@ pub mod handshaker_server {
         async fn perform_handshake(
             &self,
             request: tonic::Request<super::HandshakeInfo>,
-        ) -> Result<tonic::Response<super::HandshakeInfo>, tonic::Status>;
+        ) -> Result<tonic::Response<super::Void>, tonic::Status>;
     }
     #[doc = " The greeting service definition."]
     #[derive(Debug)]
@@ -121,7 +123,7 @@ pub mod handshaker_server {
                     #[allow(non_camel_case_types)]
                     struct PerformHandshakeSvc<T: Handshaker>(pub Arc<T>);
                     impl<T: Handshaker> tonic::server::UnaryService<super::HandshakeInfo> for PerformHandshakeSvc<T> {
-                        type Response = super::HandshakeInfo;
+                        type Response = super::Void;
                         type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
                         fn call(
                             &mut self,
